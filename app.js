@@ -25,7 +25,7 @@ var appPort = process.argv[2];
 process.argv.forEach(function (val, index, array) {
   console.log(index + ': ' + val);
 }); 
-app.set('port', process.env.PORT ||appPort || 3001);
+app.set('port', process.env.PORT ||3001);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 //app.use(favicon());
