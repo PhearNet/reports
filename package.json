@@ -8,13 +8,8 @@
     "email": "personalpc@live.com"
   },
   "dependencies": {
-    "cradle": "*",
-    "d3": "*",
-    "engine.io": "*",
     "express": "*",
     "jade": "*",
-    "jsdom": "*",
-    "passport": "*",
     "socket.io": "*",
     "loggly": "*",
     "stylus": "*",

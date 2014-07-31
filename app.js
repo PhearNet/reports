@@ -8,9 +8,9 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var _io = require('socket.io');
-var passport = require('passport');
-var d3 = require('d3');
-var cradle = require('cradle');
+//var passport = require('passport');
+//var d3 = require('d3');
+//var cradle = require('cradle');
 //cradle.setup({
 //    host: 'localhost',
 //    cache: true,
@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
 //    app.use(express.errorHandler());
 }
-var jsdom = require("jsdom");
+//var jsdom = require("jsdom");
 
 
 app.get('/', routes.index);
