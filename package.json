@@ -1,0 +1,23 @@
+{
+  "name": "PhearReports",
+  "version": "0.0.0",
+  "description": "Reports from the PhearEngine",
+  "main": "app.js",
+  "author": {
+    "name": "mike.feher",
+    "email": "personalpc@live.com"
+  },
+  "dependencies": {
+    "cradle": "*",
+    "d3": "*",
+    "engine.io": "*",
+    "express": "*",
+    "jade": "*",
+    "jsdom": "*",
+    "passport": "*",
+    "socket.io": "*",
+    "loggly": "*",
+    "stylus": "*",
+    "favicon": "*"
+  }
+}
