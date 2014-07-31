@@ -1,0 +1,104 @@
+﻿doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/socket.io/socket.io.js')
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+    script(type='text/javascript').
+      var socket = io.connect('http://localhost');
+      var LOGGING = false;
+      var send = function(event){
+        if(LOGGING)
+          console.log(event.type + ":", event);
+
+        var holder = {};
+        for(var attrib in event){
+            //console.log(attrib);
+            if(typeof event[attrib] === "string")
+              holder[attrib] = event[attrib];
+            if(typeof event[attrib] === "number")
+              holder[attrib] = event[attrib];
+            if(typeof event[attrib] === "boolean")
+              holder[attrib] = event[attrib];
+            //if(typeof event[attrib] === "symbol")
+              //holder.push(event[attrib]);
+            //if(typeof event[attrib] === "function")
+              //holder.push(event[attrib]);
+        }
+        socket.emit('windowEvent', holder);
+      };
+      function setupListener(element, index, array){
+        //console.log(element,index,array);
+        window[element] = send;
+      }
+      var events = [
+      "oncanplay",
+      "oncanplaythrough",
+      "onchange",
+      "onclose",
+      "oncontextmenu",
+      "oncuechange",
+      "ondblclick",
+      "ondevicemotion",
+      "ondeviceorientation",
+      "ondrag",
+      "ondragstart",
+      "ondragend",
+      "ondragleave",
+      "ondragover",
+      "ondrop",
+      "ondurationchange",
+      "onemptied",
+      "onended",
+      "onerror",
+      "onerrorupdate",
+      "onfocus",
+      "onhelp",
+      "onkeydown",
+      "onkeypress",
+      "onkeyup",
+      "onload",
+      "onmousedown",
+      "onmousemove",
+      "onmouseout",
+      "onmouseover",
+      "onmouseup",
+      "onpaste",
+      "oncut",
+      "onpropertychange",
+      "onreadystatechange",
+      "onreset",
+      "onresize",
+      "onresizeend",
+      "onresizestart",
+      "onrowenter",
+      "onrowexit",
+      "onrowsdelete",
+      "onrowsinserted",
+      "onscroll",
+      "onselect",
+      "onselectionchange",
+      "onselectstart",
+      "onstop",
+      "onsubmit",
+      "onautocomplete",
+      "onautocompleteerror",
+      "onbeforeunload",
+      "onblur",
+      "oncancel",
+      "onabort",
+      "onclick",
+      "onmouseenter",
+      "onmousedown",
+      "onmousemove",
+      "onwheel",
+      "onunload"
+      ];
+
+      events.forEach(setupListener);
+      socket.on('news', function (data) {
+      console.log(data);
+      });
+  body
+    block content
