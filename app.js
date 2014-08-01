@@ -1,3 +1,17 @@
+
+var INSTANCE = {
+    processVerisons: process.versions,
+    processTitle: process.title,
+    processPID: process.pid,
+    startTime: process.hrtime(),
+    platform: process.platform,
+    arch: process.arch,
+    memory: process.memoryUsage(),
+    uptime: process.uptime(),
+    network: require('os').networkInterfaces(),
+};
+console.log(INSTANCE);
+
 var env = process.env.NODE_ENV || 'development';
 //console.log(process.env);
 //var ghost = require('ghost');

@@ -11,3 +11,4 @@ RUN npm install forever -g
 
 RUN git clone https://github.com/PhearZero/phear-reports.git
 RUN cd phear-reports && npm install
+CMD [nodejs]
