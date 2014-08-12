@@ -1,4 +1,3 @@
-
 var INSTANCE = {
     processVerisons: process.versions,
     processTitle: process.title,
@@ -11,7 +10,7 @@ var INSTANCE = {
     network: require('os').networkInterfaces(),
 };
 console.log(INSTANCE);
-
+console.log()
 var env = process.env.NODE_ENV || 'development';
 //console.log(process.env);
 //var ghost = require('ghost');
