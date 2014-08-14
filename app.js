@@ -1,3 +1,4 @@
+require('newrelic');
 var INSTANCE = {
     processVerisons: process.versions,
     processTitle: process.title,
