@@ -33,32 +33,32 @@ var path = require('path');
 var _io = require('socket.io');
 //var passport = require('passport');
 var d3 = require('d3');
-var cradle = require('cradle');
+//var cradle = require('cradle');
 
 
 //DB config
-cradle.setup({
-    host: 'localhost',
-    cache: true,
-    raw: false,
-    forceSave: true
-});
-var dbconnection = new(cradle.Connection)('http://localhost', 5984, {
-    cache: true,
-    raw: false,
-    forceSave: true
-});
-var db = dbconnection.database('funkytown');
-db.exists(function(err, exists) {
-    if (err) {
-        console.log('error', err);
-    } else if (exists) {
-        console.log('the force is with you.');
-    } else {
-        console.log('database does not exists.');
-        db.create();
-    }
-});
+//cradle.setup({
+//    host: 'localhost',
+//    cache: true,
+//    raw: false,
+//    forceSave: true
+//});
+//var dbconnection = new(cradle.Connection)('http://localhost', 5984, {
+//    cache: true,
+//    raw: false,
+//    forceSave: true
+//});
+//var db = dbconnection.database('funkytown');
+//db.exists(function(err, exists) {
+//    if (err) {
+//        console.log('error', err);
+//    } else if (exists) {
+//        console.log('the force is with you.');
+//    } else {
+//        console.log('database does not exists.');
+//        db.create();
+//    }
+//});
 
 //Application config
 var app = express();
@@ -85,44 +85,44 @@ server.listen(app.get('port'), function() {
 
 
 //Bind to the websocket
-var io = _io.listen(server);
-
-//var geoip = require('geoip-lite');
-
-io.on('connection', function(socket) {
-    console.log('a user connected');
-    //var address = socket.handshake.address;
-    //var geo = geoip.lookup(address.address);
-    // console.log(address)
-    // console.log(geo);
-    socket.emit('news', {
-        hello: 'world'
-    });
-
-    socket.on('windowEvent', function(event) {
-        console.log("Event");
+//var io = _io.listen(server);
+//
+////var geoip = require('geoip-lite');
+//
+//io.on('connection', function(socket) {
+//    console.log('a user connected');
+//    //var address = socket.handshake.address;
+//    //var geo = geoip.lookup(address.address);
+//    // console.log(address)
+//    // console.log(geo);
+//    socket.emit('news', {
+//        hello: 'world'
+//    });
+//
+//    socket.on('windowEvent', function(event) {
+//        console.log("Event");
+////        db.save({
+////            dateCreated: new Date().getTime(),
+////            headers: socket.client.request.headers,
+////            ip: socket.handshake.address,
+////            event: event
+////        }, function(err, res) {
+////            // Handle response
+////            console.log(err);
+////        });
+//
+//        console.log(event.type);
+//    });
+//    socket.on('disconnect', function() {
 //        db.save({
-//            dateCreated: new Date().getTime(),
 //            headers: socket.client.request.headers,
 //            ip: socket.handshake.address,
-//            event: event
+//            event: "disconnect"
 //        }, function(err, res) {
 //            // Handle response
-//            console.log(err);
 //        });
-
-        console.log(event.type);
-    });
-    socket.on('disconnect', function() {
-        db.save({
-            headers: socket.client.request.headers,
-            ip: socket.handshake.address,
-            event: "disconnect"
-        }, function(err, res) {
-            // Handle response
-        });
-
-        console.log('disconnected');
-    });
-
-});
+//
+//        console.log('disconnected');
+//    });
+//
+//});
