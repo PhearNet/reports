@@ -84,45 +84,45 @@ server.listen(app.get('port'), function() {
 });
 
 
-//Bind to the websocket
-//var io = _io.listen(server);
-//
-////var geoip = require('geoip-lite');
-//
-//io.on('connection', function(socket) {
-//    console.log('a user connected');
-//    //var address = socket.handshake.address;
-//    //var geo = geoip.lookup(address.address);
-//    // console.log(address)
-//    // console.log(geo);
-//    socket.emit('news', {
-//        hello: 'world'
-//    });
-//
-//    socket.on('windowEvent', function(event) {
-//        console.log("Event");
-////        db.save({
-////            dateCreated: new Date().getTime(),
-////            headers: socket.client.request.headers,
-////            ip: socket.handshake.address,
-////            event: event
-////        }, function(err, res) {
-////            // Handle response
-////            console.log(err);
-////        });
-//
-//        console.log(event.type);
-//    });
-//    socket.on('disconnect', function() {
+Bind to the websocket
+var io = _io.listen(server);
+
+//var geoip = require('geoip-lite');
+
+io.on('connection', function(socket) {
+    console.log('a user connected');
+    //var address = socket.handshake.address;
+    //var geo = geoip.lookup(address.address);
+    // console.log(address)
+    // console.log(geo);
+    socket.emit('news', {
+        hello: 'world'
+    });
+
+    socket.on('windowEvent', function(event) {
+        console.log("Event");
 //        db.save({
+//            dateCreated: new Date().getTime(),
 //            headers: socket.client.request.headers,
 //            ip: socket.handshake.address,
-//            event: "disconnect"
+//            event: event
 //        }, function(err, res) {
 //            // Handle response
+//            console.log(err);
 //        });
-//
-//        console.log('disconnected');
-//    });
-//
-//});
+
+        console.log(event.type);
+    });
+    socket.on('disconnect', function() {
+        db.save({
+            headers: socket.client.request.headers,
+            ip: socket.handshake.address,
+            event: "disconnect"
+        }, function(err, res) {
+            // Handle response
+        });
+
+        console.log('disconnected');
+    });
+
+});
