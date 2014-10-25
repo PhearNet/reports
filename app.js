@@ -95,9 +95,6 @@ io.on('connection', function(socket) {
     //var geo = geoip.lookup(address.address);
     // console.log(address)
     // console.log(geo);
-    socket.emit('news', {
-        hello: 'world'
-    });
 
     socket.on('windowEvent', function(event) {
         console.log("Event");
@@ -114,13 +111,13 @@ io.on('connection', function(socket) {
         console.log(event.type);
     });
     socket.on('disconnect', function() {
-        db.save({
-            headers: socket.client.request.headers,
-            ip: socket.handshake.address,
-            event: "disconnect"
-        }, function(err, res) {
-            // Handle response
-        });
+//        db.save({
+//            headers: socket.client.request.headers,
+//            ip: socket.handshake.address,
+//            event: "disconnect"
+//        }, function(err, res) {
+//            // Handle response
+//        });
 
         console.log('disconnected');
     });
