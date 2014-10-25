@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "express": "*",
-    "d3": "*",
     "jade": "*",
     "stylus": "*",
     "favicon": "*"
