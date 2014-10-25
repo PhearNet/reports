@@ -10,12 +10,8 @@
   "dependencies": {
     "express": "*",
     "d3": "*",
-    "cradle": "*",
     "jade": "*",
-    "socket.io": "*",
-    "loggly": "*",
     "stylus": "*",
-    "favicon": "*",
-    "newrelic": "*"
+    "favicon": "*"
   }
 }
