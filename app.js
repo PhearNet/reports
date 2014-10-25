@@ -84,7 +84,7 @@ server.listen(app.get('port'), function() {
 });
 
 
-Bind to the websocket
+//Bind to the websocket
 var io = _io.listen(server);
 
 //var geoip = require('geoip-lite');
