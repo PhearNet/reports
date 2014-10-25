@@ -32,7 +32,7 @@ var http = require('http');
 var path = require('path');
 //var _io = require('socket.io');
 //var passport = require('passport');
-var d3 = require('d3');
+//var d3 = require('d3');
 //var cradle = require('cradle');
 
 
