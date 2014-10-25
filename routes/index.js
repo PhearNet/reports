@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Real Time Arduino!' });
+  res.render('index', { title: 'phear-reports!' });
 };

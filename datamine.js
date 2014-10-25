@@ -65,7 +65,7 @@ var app = express();
 app.set('port', process.env.PORT ||3001);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-//app.use(favicon());
+app.use(favicon());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -101,15 +101,15 @@ io.on('connection', function(socket) {
 
     socket.on('windowEvent', function(event) {
         console.log("Event");
-//        db.save({
-//            dateCreated: new Date().getTime(),
-//            headers: socket.client.request.headers,
-//            ip: socket.handshake.address,
-//            event: event
-//        }, function(err, res) {
-//            // Handle response
-//            console.log(err);
-//        });
+        db.save({
+            dateCreated: new Date().getTime(),
+            headers: socket.client.request.headers,
+            ip: socket.handshake.address,
+            event: event
+        }, function(err, res) {
+            // Handle response
+            console.log(err);
+        });
 
         console.log(event.type);
     });

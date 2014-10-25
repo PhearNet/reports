@@ -1,0 +1,21 @@
+{
+    "nodes":[
+        {"name":"Zero","group":0},
+        {"name":"Updated % Time Flooded","group":1},
+        {"name":"Elevation","group":2},
+        {"name":"Soil Organic Matter (%)","group":3},
+        {"name":"Soil Bulk Density (g/cm3)","group":4},
+        {"name":"Soil Conductivity (mS)","group":5},
+        {"name":"pH Plot Weighted Average","group":6},
+        {"name":"Live AVGE transplants","group":7}
+    ],
+    "links":[
+        {"source":1,"target":0,"value":100},
+        {"source":2,"target":0,"value":20},
+        {"source":3,"target":0,"value":20},
+        {"source":4,"target":0,"value":20},
+        {"source":5,"target":0,"value":20},
+        {"source":6,"target":0,"value":20},
+        {"source":7,"target":0,"value":20}
+    ]
+}
